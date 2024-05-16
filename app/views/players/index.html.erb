@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Shuffler</title>
+  <%= stylesheet_link_tag 'main-style' %>
+</head>
+<body>
+<div class="container">
+  <h1 class="page-title">Squad Shuffler</h1>
+
+  <div class="notice"><%= flash[:success] || flash[:error] %></div>
+  <%= render 'form' %>
+
+  <section class="player-section">
+    <div class="player-container">
+      <ul class="player-list">
+        <% @players.each do |player| %>
+          <li class="player-item">
+            <%= "#{player.name} - #{player.rating}" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+
+  <div class="actions">
+    <%= link_to 'Distribuir', players_shuffle_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+</body>
+</html>

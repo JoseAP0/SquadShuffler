@@ -1,0 +1,38 @@
+<% stylesheet_link_tag 'main-style' %>
+
+<section class="team-section">
+  <div class="team-container">
+    <div class="team-card">
+      <div class="team-header">
+        <h2>Team A</h2>
+      </div>
+      <div class="team-body">
+        <ul class="team-list">
+          <% @teams[:team1].each do |player| %>
+            <li class="team-player">
+              <%= "#{player.name} - #{player.rating}" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-header">
+        <h2>Team B</h2>
+      </div>
+      <div class="team-body">
+        <ul class="team-list">
+          <% @teams[:team2].each do |player| %>
+            <li class="team-player">
+              <%= "#{player.name} - #{player.rating}" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="actions">
+  <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
+</div>

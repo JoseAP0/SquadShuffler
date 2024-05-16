@@ -1,0 +1,12 @@
+<%= form_with model: @player, class: 'player-form' do |player| %>
+  <%= player.label 'Nome: ' %>
+  <%= player.text_field :name %>
+
+  <%= player.label 'Nota:' %>
+  <%= player.text_field :rating %>
+
+  <%= player.submit 'Salvar' %>
+<% end %>
+
+
+
