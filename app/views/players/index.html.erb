@@ -8,7 +8,9 @@
 <div class="container">
   <h1 class="page-title">Squad Shuffler</h1>
 
-  <div class="notice"><%= flash[:success] || flash[:error] %></div>
+  <% if flash.present? %>
+    <div class="notice"><%= flash[:success] || flash[:error] %></div>
+  <% end %>
   <%= render 'form' %>
 
   <section class="player-section">
